@@ -15,6 +15,8 @@ describe('KiwiSaver Retirement Calculator', function()
         
         cy.get('.sw-sidenav-item-link.link')
             .get('.sw-sidenav-item-link-text.last:visible').click()
+
+
         cy.get('.icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope')
             // .get('').click()
         // cy.wait(1000)
@@ -22,7 +24,7 @@ describe('KiwiSaver Retirement Calculator', function()
 
     it('Calculate projected balances where age = 30, employed, @82000pa, @4%, and Defensive Risk ', function() 
     {
-        cy.get('.wpnib-field-current-age field-group ng-isolate-scope')
+        cy.get('.wpnib-field-current-age.field-group.ng-isolate-scope')
             // .get('.text').type(config.tc[0].age)
 
     })
