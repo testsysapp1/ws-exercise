@@ -16,18 +16,22 @@ describe('KiwiSaver Retirement Calculator', function()
         cy.get('.sw-sidenav-item-link.link')
             .get('.sw-sidenav-item-link-text.last:visible').click()
 
+            const getIframe = cy
+                .get('#calculator-embed') //icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope')
+                .get ('iframe')
+                .its('0.contentDocument.body')
+                .should('be.visible')
+                .then(cy.wrap);
 
-        cy.get('.icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope')
-            // .get('').click()
-        // cy.wait(1000)
+            //getIframe('.icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope'))
     })
 
-    it('Calculate projected balances where age = 30, employed, @82000pa, @4%, and Defensive Risk ', function() 
-    {
-        cy.get('.wpnib-field-current-age.field-group.ng-isolate-scope')
-            // .get('.text').type(config.tc[0].age)
+    // it('Calculate projected balances where age = 30, employed, @82000pa, @4%, and Defensive Risk ', function() 
+    // {
+    //     cy.get('.wpnib-field-current-age.field-group.ng-isolate-scope')
+    //         // .get('.text').type(config.tc[0].age)
 
-    })
+    // })
 
     // it('Calculate projected balances where age = 45, self-employed, @100000pa, voluntary contribution 90fn, Conservative Risk, saving goal 290,000', function() 
     // {
@@ -42,4 +46,7 @@ describe('KiwiSaver Retirement Calculator', function()
     //     // .get('.text').type('45')
 
     // })
+
+
+
 })
