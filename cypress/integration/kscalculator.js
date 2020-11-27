@@ -1,10 +1,12 @@
 /// <reference types="Cypress" />
 
+var config = require('../config/ws.json')
+
 describe('KiwiSaver Retirement Calculator', function()  
 {
     it('Click Current Age info icon to displaye the info message', function() 
     {
-        cy.visit('https://www.westpac.co.nz/')
+        cy.visit(config.url)
             
         cy.get('#ubermenu-section-1-6-ps').trigger('mouseover')
         cy.get('.sw-ubermenu-column-items')
@@ -13,15 +15,15 @@ describe('KiwiSaver Retirement Calculator', function()
         
         cy.get('.sw-sidenav-item-link.link')
             .get('.sw-sidenav-item-link-text.last:visible').click()
-        cy.get('#CurrentAge')
-            .get('.icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope').click()
+        cy.get('.icon-target.icon-target-help-toggle.icon-btn.icon-btn-info.ir.ng-scope')
+            // .get('').click()
         // cy.wait(1000)
     })
 
     it('Calculate projected balances where age = 30, employed, @82000pa, @4%, and Defensive Risk ', function() 
     {
         cy.get('.wpnib-field-current-age field-group ng-isolate-scope')
-            // .get('.text').type('30')
+            // .get('.text').type(config.tc[0].age)
 
     })
 
