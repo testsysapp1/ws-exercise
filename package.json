@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open" 
+    "test": "cypress open"
   },
   "author": "melissaalpad",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.0.0"
+    "cypress": "^6.0.0",
+    "cypress-iframe": "^1.0.1"
   }
 }
